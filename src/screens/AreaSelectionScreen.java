@@ -21,6 +21,7 @@ public class AreaSelectionScreen extends Screen{
     private TheaterState theaterState;
     private String day;
     private SeatSelectionScreen seatSelection;
+    private int price;
     
     public AreaSelectionScreen(Theater theater, String day, DispenserManager dispenseManager, TheaterState theaterState, ScreenMode mode) {
         super("AreaSelectionScreen", dispenseManager, mode);
@@ -29,6 +30,7 @@ public class AreaSelectionScreen extends Screen{
         this.theaterState = theaterState;
         options = new ArrayList();
         this.setOptions(options);
+        
     }
     private void displayArea(TheaterAreaState area){
         
@@ -41,7 +43,13 @@ public class AreaSelectionScreen extends Screen{
     }
     public void setOptions(List<String> options){
         for(int i = 0; i < this.theater.getArea().size(); i++){
-            options.add(this.theater.getArea(i).getName());
+            if(this.day.contains("Fri") || this.day.contains("Sat") || this.day.contains("Sun")){
+                options.add(this.theater.getArea(i).getName() + " " +this.theater.getArea(i).getPrice()*2 + "€");
+
+            } else{
+                options.add(this.theater.getArea(i).getName() + " " +this.theater.getArea(i).getPrice() + "€");
+
+            }
         }
         options.add("Cancelar");
     }

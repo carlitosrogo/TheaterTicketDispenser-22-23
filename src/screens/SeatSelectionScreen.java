@@ -26,6 +26,7 @@ public class SeatSelectionScreen extends Screen{
     private final int maxSelected = 4;
     private List<String> selectedSeats = new LinkedList<>();
     private String title = "SeatSelectionScreen";
+    private int price;
     
     public SeatSelectionScreen(Theater theater, String day, DispenserManager dispenseManager,TheaterAreaState areaSelection, ScreenMode mode) {
         super("SeatSelectionScreen", dispenseManager, mode);
@@ -37,6 +38,13 @@ public class SeatSelectionScreen extends Screen{
     }
     public List<String> getOptions(){
         return options;
+    }
+    public int getPrice(){
+        price = this.areaSelection.getPrice();
+        if(this.day.contains("Fri") || this.day.contains("Sat") || this.day.contains("Sun")){
+            price = areaSelection.getPrice() * 2;
+        }
+        return price;
     }
     public void setOptions(List<String> options){
         options.add("Cancelar");
@@ -60,7 +68,7 @@ public class SeatSelectionScreen extends Screen{
                     String[] ph = fileLine.split(":");
                     ticket.add("Fila" + ":" + ph[0]);
                     ticket.add("Columna" + ":" + ph[1]);
-                    ticket.add("Precio" + ":" + this.areaSelection.getPrice() + "€");
+                    ticket.add("Precio" + ":" + this.getPrice() + "€");
                     dw.printTicket(ticket);
                 }
             } else {
@@ -97,7 +105,7 @@ public class SeatSelectionScreen extends Screen{
         return screenR;
     }
     public int finalPrice(){
-        return this.selected * this.areaSelection.getPrice();
+        return this.selected * this.getPrice();
     }
     private void reloadState(boolean update){
         for(int i = 0; i < this.areaSelection.getRows(); i++){
