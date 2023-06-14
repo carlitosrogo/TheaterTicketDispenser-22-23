@@ -18,6 +18,7 @@ public class BackScreen extends Screen{
     public BackScreen(String title, DispenserManager dispenseManager, ScreenMode mode) {
         super(title, dispenseManager, mode);
         options = new ArrayList();
+        this.setDescription("BackScreenDes");
     }
     public List<String> getOptions(){
         return options;

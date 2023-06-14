@@ -1,7 +1,6 @@
 package main;
 
 import theater.TheaterAreaState;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -36,7 +35,7 @@ public class Screen {
     }
 
     public List<String> getOptions() {
-        return null;
+        return options;
     }
 
     public ScreenMode getMode() {

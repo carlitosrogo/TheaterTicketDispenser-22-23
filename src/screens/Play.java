@@ -25,7 +25,6 @@ public class Play {
         try{
             Scanner r;
             r = new Scanner(new FileReader("./src/resources/play.txt"));
-            //lee hasta que no haya siguiente linea
             while (r.hasNextLine()){
                 String line = r.nextLine();
                 if (line.startsWith("play_name:")){

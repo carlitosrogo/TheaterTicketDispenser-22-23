@@ -1,0 +1,49 @@
+WellComeScreen:Bienvenido al teatro Alfil
+Producido por Stage Entertainment, El Rey León es la mayor producción musical jamás representada en España. Apto para toda la familia, es una experiencia única que atrapa de principio a fin y que, tal y como ya han hecho más de 100 millones de personas en todo el mundo, hay que vivir, al menos, una vez en la vida. Por su espectacularidad, por su belleza, por la emoción que es capaz de transmitir...:Producido por Stage Entertainment, El Rey León es la mayor producción musical jamás representada en España. Apto para toda la familia, es una experiencia única que atrapa de principio a fin y que, tal y como ya han hecho más de 100 millones de personas en todo el mundo, hay que vivir, al menos, una vez en la vida. Por su espectacularidad, por su belleza, por la emoción que es capaz de transmitir...
+IdiomSelectionScreen:Selección de idioma
+DateSelectionScreen:Selección fecha de representación
+Cancelar:Cancelar
+Continuar:Aceptar
+Castellano:Español
+Euskera:Euskera
+Catalan:Catalán
+Ingles:Inglés
+Gallego:Gallego
+Sun:Domingo
+Tue:Martes
+Wed:Miércoles
+Thu:Jueves
+Fri:Viernes
+Sat:Sábado
+AreaSelectionScreen:Seleccione la zona del teatro
+Palco1:Palco 1 (D)
+Palco2:Palco 2 (E)
+Anfiteatro1:Anfiteatro 1 (B)
+Anfiteatro2:Anfiteatro 2 (C)
+Platea:Platea (A)
+Palco1 30€:Palco 1 30€(D)
+Palco1 60€:Palco 1 60€(D)
+Palco2 30€:Palco 2 30€(E)
+Palco2 60€:Palco 2 60€(E)
+Anfiteatro1 40€:Anfiteatro 1 40€(B)
+Anfiteatro1 80€:Anfiteatro 1 80€(B)
+Anfiteatro2 30€:Anfiteatro 2 30€(C)
+Anfiteatro2 60€:Anfiteatro 2 60€(C)
+Platea 50€:Platea 50€(A)
+Platea 100€:Platea 100€(A)
+SeatSelectionScreen:Seleccione sus butacas
+El precio de su compra es de:El precio de su compra es de
+PaymentScreen:Inserte una tarjeta de crédito
+ErrorScreen:No se ha podido establecer la conexion con el banco, pruebe mas tarde
+Error:Error
+ErrorScreen2:No dispone de saldo suficiente por lo que no podemos realizar la transaccion; disculpe las molestias
+Entrada para:Entrada para
+Fila:Fila
+Columna:Columna
+Precio:Precio
+Teatro Alfil:Teatro Alfil
+Asiento ocupado:Asiento ocupado
+El maximo es 4 asientos:El máximo es 4 asientos
+Asientos seleccionados:Asientos seleccionados
+BackScreen:Retire su tarjeta de crédito
+BackScreenDes:Si no la retira el dispensador la guardará y podrá reclamarla en recepción

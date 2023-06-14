@@ -25,7 +25,6 @@ public class SeatSelectionScreen extends Screen{
     private PaymentScreen payment;
     private final int maxSelected = 4;
     private List<String> selectedSeats = new LinkedList<>();
-    private String title = "SeatSelectionScreen";
     private int price;
     
     public SeatSelectionScreen(Theater theater, String day, DispenserManager dispenseManager,TheaterAreaState areaSelection, ScreenMode mode) {
@@ -59,22 +58,24 @@ public class SeatSelectionScreen extends Screen{
                 this.reloadState(true);
                 for(int i = 0; i < this.selectedSeats.size(); i++){
                     List<String> ticket = new LinkedList<>();
-                    ticket.add("Entrada para");
-                    ticket.add("========================");
-                    ticket.add("Teatro " + theater.getName());
-                    ticket.add(this.areaSelection.getName());
-                    ticket.add(this.day.substring(3));
+                    ticket.add("************************");
+                    ticket.add(this.dispenserManager.getTranslator().translate("Entrada para") + " " + this.theater.getPlay().getTitle());
+                    ticket.add("************************");
+                    ticket.add(this.dispenserManager.getTranslator().translate("Teatro " + theater.getName()));
+                    ticket.add(this.dispenserManager.getTranslator().translate(this.areaSelection.getName()));
+                    ticket.add(this.dispenserManager.getTranslator().translate(this.day.substring(0, 3)) + this.day.substring(3));
                     String fileLine = this.selectedSeats.get(i);
-                    String[] ph = fileLine.split(":");
-                    ticket.add("Fila" + ":" + ph[0]);
-                    ticket.add("Columna" + ":" + ph[1]);
-                    ticket.add("Precio" + ":" + this.getPrice() + "€");
+                    String[] arrList = fileLine.split(":");
+                    ticket.add(this.dispenserManager.getTranslator().translate("Fila") + ":" + arrList[0]);
+                    ticket.add(this.dispenserManager.getTranslator().translate("Columna") + ":" + arrList[1]);
+                    ticket.add(this.dispenserManager.getTranslator().translate("Precio") + ":" + this.getPrice() + "€");
+                    ticket.add("************************");
                     dw.printTicket(ticket);
                 }
             } else {
                 this.reloadState(false);
             }
-            this.dispenserManager.showScreen(30, new BackScreen("Retire su tarjeta de credito",this.dispenserManager, ScreenMode.messageMode));
+            this.dispenserManager.showScreen(30, new BackScreen("BackScreen",this.dispenserManager, ScreenMode.messageMode));
         }else{
             this.reloadState(false);
         }
@@ -129,23 +130,17 @@ public class SeatSelectionScreen extends Screen{
             this.areaSelection.setSeatState(row - 1, col - 1, SeatState.selected);
             this.dispenserManager.getDispenser().markSeat(row, col, 1);
             this.selected++;
-            this.setTitle("Asientos seleccionados: " + this.selected);
+            this.setTitle("Asientos seleccionados" + ": " + this.selected);
         } else if (this.areaSelection.getSeatState(row - 1, col - 1) == SeatState.selected) {
             this.areaSelection.setSeatState(row - 1, col - 1, SeatState.free);
             this.dispenserManager.getDispenser().markSeat(row, col, 2);
             this.selected--;
-            this.setTitle("Asientos seleccionados: " + this.selected);
+            this.setTitle("Asientos seleccionados" + ": " + this.selected);
         } else if (this.areaSelection.getSeatState(row - 1, col - 1) == SeatState.occupied) {
             this.setTitle("Asiento ocupado");
         } else if (this.maxSelected >= this.selected) {
             this.setTitle("El maximo es 4 asientos");
         }
         return ScreenResult.continueInScreen;
-    }
-    public String getTitle(){
-        return title;
-    }
-    public void setTitle(String line){
-        this.title = line;
     }
 }

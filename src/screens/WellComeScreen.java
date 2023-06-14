@@ -56,9 +56,6 @@ public class WellComeScreen extends Screen{
         this.options.add(idiomSelection.getTitle());
         this.options.add(dateSelection.getTitle());
     }
-    public String getTitle(){
-        return p.getTitle();
-    }
     public String getDescription(){
         return p.getDescription();
     }

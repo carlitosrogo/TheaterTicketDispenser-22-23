@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import screens.Play;
 import theater.TheaterArea;
 
 /**
@@ -18,9 +19,11 @@ public class Theater {
     private ArrayList<TheaterArea> theaterAreas = new ArrayList<TheaterArea>();
     private String theaterImage;
     private String dir = "./src/resources/theater.txt";
+    private Play play;
     
     public Theater(){
         read(dir);
+        this.play = new Play();
     }
     
     public int getNumAreas(){
@@ -35,12 +38,15 @@ public class Theater {
     public String getName(){
         return theaterPlay;
     }
+    public Play getPlay() {
+        return play;
+    }
+    
     
     private void read(String fileName){
         try{
             Scanner r;
         r = new Scanner(new FileReader(fileName));
-        //lee hasta que no haya siguiente linea
         while (r.hasNextLine()){
             String line = r.nextLine();
             if (line.startsWith("TheaterName:")){

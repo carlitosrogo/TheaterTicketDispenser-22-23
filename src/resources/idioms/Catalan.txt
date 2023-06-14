@@ -1,0 +1,49 @@
+WellComeScreen:Benvingut al teatre Alfil
+Producido por Stage Entertainment, El Rey León es la mayor producción musical jamás representada en España. Apto para toda la familia, es una experiencia única que atrapa de principio a fin y que, tal y como ya han hecho más de 100 millones de personas en todo el mundo, hay que vivir, al menos, una vez en la vida. Por su espectacularidad, por su belleza, por la emoción que es capaz de transmitir...:Produït per Stage Entertainment, El Rey León és la major producció musical mai representada a Espanya. Apte per a tota la família, és una experiència única que atrapa de principi a fi i que, tal com ja han fet més de 100 milions de persones a tot el món, cal viure, almenys, una vegada a la vida. Per la seva espectacularitat, per la seva bellesa, per l'emoció que és capaç de...
+IdiomSelectionScreen:Selecció d'idioma
+DateSelectionScreen:Selecció data de representació
+Cancelar:Cancel·la
+Continuar:Acceptar
+Castellano:Espanyol
+Euskera:Basc
+Catalan:Català
+Ingles:Anglès
+Gallego:Gallec
+Sun:Diumenge
+Tue:Dimarts
+Wed:Dimecres
+Thu:Dijous
+Fri:Divendres
+Sat:Dissabte
+AreaSelectionScreen:Seleccioneu la zona del teatre
+Palco1:Llotja 1 (D)
+Palco2:Llotja 2 (E)
+Anfiteatro1:Amfiteatre 1 (B)
+Anfiteatro2:Amfiteatre 2 (C)
+Platea:Platea (A)
+Palco1 30€:Llotja 1 30€(D)
+Palco1 60€:Llotja 1 60€(D)
+Palco2 30€:Llotja 2 30€(E)
+Palco2 60€:Llotja 2 60€(E)
+Anfiteatro1 40€:Amfiteatre 1 40€(B)
+Anfiteatro1 80€:Amfiteatre 1 80€(B)
+Anfiteatro2 30€:Amfiteatre 2 30€(C)
+Anfiteatro2 60€:Amfiteatre 2 60€(C)
+Platea 50€:Platea 50€(A)
+Platea 100€:Platea 100€(A)
+SeatSelectionScreen:Seleccioneu les vostres butaques
+El precio de su compra es de:El preu de la compra és de
+PaymentScreen:Inseriu una targeta de crèdit
+ErrorScreen:En aquests moments no ens podem connectar amb el seu banco; disculpi les molèsties
+Error:Error
+ErrorScreen2:No disposa de saldo suficient pel que no podem realitzar la transacció; disculpi les molèsties
+Entrada para:Entrada per
+Fila:Fila
+Columna:Columna
+Precio:Preu
+Teatro Alfil:Teatre Alfil
+Asiento ocupado:Seient ocupat
+El maximo es 4 asientos:El màxim és 4 seients
+Asientos seleccionados:Seients seleccionats
+BackScreen:Traieu la targeta de crèdit
+BackScreenDes:Si no la retira el dispensador la guardarà i podrà reclamar-la a recepció

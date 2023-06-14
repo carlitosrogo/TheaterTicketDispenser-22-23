@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
  */
 public class TheaterAPP {
     
-    public static void main(String[] args) throws FileNotFoundException{
+    public static void main(String[] args){
         TheaterManager atm = new TheaterManager();
         atm.run();
     }

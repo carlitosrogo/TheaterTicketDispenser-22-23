@@ -10,29 +10,31 @@ import theater.SeatState;
  */
 public class DispenserManager {
     private TheaterTicketDispenser dispenser = new TheaterTicketDispenser();
-    private TranslatorManager translator;
+    private TranslatorManager translator = new TranslatorManager();
     private DispenserHardware dw = new DispenserHardware(dispenser);
-    
-    /*public DispenserManager(){
-        this.dispenser = new TheaterTicketDispenser();
-        this.dw = new DispenserHardware();
-        this.translator = new TranslatorManager();
-    }*/
     
     public void showScreen(int time, Screen screen){
         ScreenResult screenR = screen.begin(dw);
         this.setMode(screen);
         while(screenR == ScreenResult.continueInScreen){
-            this.dispenser.setTitle(screen.getTitle());
+            if(screen.getTitle().contains("Asientos seleccionados")){
+                this.dispenser.setTitle(this.translator.translate(screen.getTitle().substring(0, 22)) + screen.getTitle().substring(22));
+            }else {
+                this.dispenser.setTitle(this.translator.translate(screen.getTitle()));
+            }
+            
             if(screen.getDescription()== null){
                 this.dispenser.setDescription("");
+            }
+            else if(screen.getDescription().contains("El precio de su compra es de")){
+                this.dispenser.setDescription(this.translator.translate(screen.getDescription().substring(0, 28)) + screen.getDescription().substring(28));
             }else{
-                this.dispenser.setDescription(screen.getDescription());
+                this.dispenser.setDescription(this.translator.translate(screen.getDescription()));
             }
             this.dispenser.setImage(screen.getImage());
             this.getOption(screen);
             char opt = 'a';
-            if(!screen.getTitle().equals("Retire su tarjeta de credito")){
+            if(!screen.getTitle().equals("BackScreen")){
                 opt = this.dispenser.waitEvent(time);
             }
             if(screen.getMode() == ScreenMode.optionsMode){
@@ -56,7 +58,7 @@ public class DispenserManager {
                     screenR = screen.seatButtonPressed(this.dw, row, col);
                 }
             }else if (screen.getMode() == ScreenMode.messageMode){
-                if (screen.getTitle().equals("Inserte la tarjeta de credito")){
+                if (screen.getTitle().equals("PaymentScreen")){
                     if (opt == '1'){
                         screenR = screen.creditCardDetected(dw);
                     }
@@ -97,14 +99,31 @@ public class DispenserManager {
     
     public void getOption(Screen screen){
         int i = 0;
-        for(String msg: screen.getOptions()){
-            this.dispenser.setOption(i, msg);
-            i++;
+        if (!screen.getTitle().equals("DateSelectionScreen")){
+            for(String msg: screen.getOptions()){
+                this.dispenser.setOption(i, this.translator.translate(msg));
+                i++;
            
-        }
-        if(screen.getOptions().size() < 6){
-            for(int h = screen.getOptions().size(); h < 6; h++){
-                this.dispenser.setOption(h, null);
+            }
+            if(screen.getOptions().size() < 6){
+                for(int h = screen.getOptions().size(); h < 6; h++){
+                    this.dispenser.setOption(h, null);
+                }   
+            }
+        }else {
+            for(String msg: screen.getOptions()){
+                if (msg.equals("Cancelar")){
+                    this.dispenser.setOption(i, this.translator.translate(msg));
+                }else {
+                this.dispenser.setOption(i, this.translator.translate(msg.substring(0, 3))+ msg.substring( 3));
+                }
+                i++;
+           
+            }
+            if(screen.getOptions().size() < 6){
+                for(int h = screen.getOptions().size(); h < 6; h++){
+                    this.dispenser.setOption(h, null);
+                }   
             }
         }
     }

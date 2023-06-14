@@ -1,6 +1,5 @@
 package screens;
 
-import main.Theater;
 import main.DispenserManager;
 import main.DispenserHardware;
 import main.Screen;

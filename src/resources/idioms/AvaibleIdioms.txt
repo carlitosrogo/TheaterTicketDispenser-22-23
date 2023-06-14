@@ -1,0 +1,4 @@
+Castellano:Castellano.txt
+Catalan:Catalan.txt
+Euskera:Euskera.txt
+Ingles:Ingles.txt
